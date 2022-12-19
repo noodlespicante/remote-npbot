@@ -1,0 +1,14 @@
+{
+	"carregando": "<a:np_carregando_bot:850032582216908870>",
+	"confirmado": "<a:np_confirmado_bot:850033458997887026>",
+	"negado": "<a:np_negado_bot:850033458763923456>",
+	"like": "<:LikeNP:841461729824866313>",
+	"deslike": "<:DislikeNP:841461729971142707>",
+	"npcoins": "<:NPCoins:830202486433644565>",
+	"seta": "<:np_seta:871767250263240764>",
+	"aviso": "<:Aviso:896549385100488704>",
+	"antibot": "<:antibot:896551184431738902>",
+	"antiban_verified": "<:NP_Antiban_Verified:786614911555076136>",
+	"mod_badge": "<:ModeradorBadge:901863290018361434>",
+	"escudo": "<:Escudo:901863225585438773>"
+}
