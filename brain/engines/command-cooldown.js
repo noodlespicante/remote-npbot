@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
-const db = require('quick.db')
-const ms = require('parse-ms')
+const db = require('quick.db');
+const ms = import('parse-ms');
 
 const cdTable = new db.table(`CmdCooldowns`)
 
