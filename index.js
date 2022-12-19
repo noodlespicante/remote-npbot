@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const manager = new ShardingManager('./bot.js', {
-    execArgv: ['--trace-warnings'],
+    execArgv: ['--trace-warnings','--no-warnings'],
 	shardArgs: ['--ansi', '--color'],
     token: process.env.DC_TOKEN,
 });

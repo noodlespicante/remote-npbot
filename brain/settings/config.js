@@ -1,5 +1,11 @@
 'use strict';
 
+var nome_org;
+var inicio_org;
+var ano_atual;
+var website;
+var copyright;
+
 module.exports = {
 
     // IDs
@@ -12,13 +18,13 @@ module.exports = {
     economiaLog: "00000",
 
     // Infos
-    nome_org: "Noodles Picante",
-    inicio_org: "2018",
-    ano_atual: "2022",
-    website: "www.noodlespicante.site",
+    nome_org: nome_org = "Noodles Picante",
+    inicio_org: inicio_org = "2018",
+    ano_atual: ano_atual = "2022",
+    website: website = "www.noodlespicante.site",
 
-    copyright: `© ${this.nome_org} ${this.inicio_org}-${this.ano_atual}`,
-    footer: `${this.copyright} | ${this.website}`,
+    copyright: copyright = `© ${nome_org} ${inicio_org}-${ano_atual}`,
+    footer: `${copyright} | ${website}`,
 
     // Outras configs
     minMembros: 30,

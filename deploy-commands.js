@@ -14,6 +14,7 @@ let clientId = brain.config.clientId;
 
 var commands = [];
 //var commandsG = [];
+var commandNumb = 0;
 
 const commandsFolders = fs.readdirSync('./comandos');
 
@@ -30,7 +31,8 @@ commandsFolders.forEach(async folder => {
 		if (!props.execute) continue; //Verifica se existe a propriedade execute
 
 		commands.push(props.data.toJSON());
-		console.log(`[!] Interação ${f} registrada com sucesso!`)
+		commandNumb++;
+		console.log(`> Interação ${f} registrada com sucesso!`);
 	}
 
 /*
@@ -60,10 +62,11 @@ rest.put(Routes.applicationCommands(clientId), { body: commandsG })
 	.catch(console.error);
 */
 
-if (commands.size > 0) {
+if (commandNumb > 0) {
     rest.put(Routes.applicationCommands(clientId), { body: commands })
-    .then(async() => await console.log('[!] Todas as interações globais foram registradas com sucesso!'))
-    .then(async() => await console.log(` `))
+	.then(console.log(` `))
+    .then(console.log('[!] Todas as interações globais foram registradas com sucesso!'))
+    .then(console.log(` `))
     .catch(console.error);
 } else {
     console.log(`[!] Nenhuma interação global registrada!`);

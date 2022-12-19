@@ -40,13 +40,16 @@ client.commands = new Collection();
 client.aliases = new Collection();
 
 client.once(Events.ClientReady, async (client) => {
+    console.log(` `);
     console.log(`Ok, estou online e logado como ${client.user.tag} (${client.guilds.cache.size} servidor(es) na shard)`);
 
     await client.shard.fetchClientValues('guilds.cache.size').then(async results => {
         let totalServidores = results.reduce((acc, guildCount) => acc + guildCount, 0)
         console.log(`${totalServidores} servidor(es) no total`);
+        console.log(` `);
     }).catch(console.error);
 
+    //client.user.setAFK(true, 0);
 });
 
 console.log(` `);
@@ -69,7 +72,7 @@ commandsFolders.forEach(async folder => {
         client.commands.set(props.help.name, props);
         client.aliases.set(props.help.aliases, props);
 
-        console.log(`[!] Comando ${f} e seus aliases carregado com sucesso!`);
+        console.log(`> Comando ${f} e seus aliases carregado com sucesso!`);
         commandNumb++;
     }
 
@@ -147,16 +150,16 @@ client.on(Events.MessageCreate, async (message) => {
     };
     // Sistema de permissões - FINAL
 
-    if (!arquivocmd) return message.reply(`${message.author}, houve um erro ao executar este comando ou ele não existe! \nExecute **\`npr!ajuda\`** ou **\`/ajuda\`** para visualizar a lista de comandos ou slash commands existentes.`, {failIfNotExists: false});
+    if (!arquivocmd) return message.reply(`${message.author}, houve um erro ao executar este comando ou ele não existe! \nExecute **\`${msgPrefixo}ajuda\`** ou **\`/ajuda\`** para visualizar a lista de comandos ou slash commands existentes.`, {failIfNotExists: false});
 
     let props = {
-        client: client,
-        message: message,
-        args: args,
-        brain: brain,
-        prefixos: prefixos,
-        msgPrefixo: msgPrefixo,
-        commandName: commandName
+        client,
+        message,
+        args,
+        brain,
+        prefixos,
+        msgPrefixo,
+        commandName
     };
 
     //arquivocmd.run(client, message, args, brain, prefixos, msgPrefixo, commandName) // Executa o comando
@@ -181,11 +184,8 @@ client.on(Events.InteractionCreate, async (interaction) => {
 	} catch (error) {
 		console.error(error);
 		await interaction.reply({ content: 'Houve um erro ao tentar executar esse comando!', ephemeral: true });
-	}
+	};
 
-    if (commandName === 'stats') {
-        return interaction.reply(`Estou atualmente em ${client.guilds.cache.size} servidores.`);
-    }
 });
 
 client.login(token);
