@@ -2,13 +2,13 @@
 
 module.exports = {
   // Configs
-  config: require(`../brain/settings/config.js`),
-  cmdSettings: require(`../brain/settings/cmdSettings.json`),
+  config: require(`./settings/config`),
+  cmdSettings: require(`./settings/cmdSettings.json`),
 
   // Variables
-  emojis: require(`../brain/variables/emojis.json`),
-  channels: require(`../brain/variables/channels.json`),
-  roles: require(`../brain/variables/roles.json`),
+  emojis: require(`./variables/emojis.json`),
+  channels: require(`./variables/channels.json`),
+  roles: require(`./variables/roles.json`),
 
   // Engines
   botCooldown: require(`./engines/command-cooldown`),
