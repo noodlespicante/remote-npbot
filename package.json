@@ -1,6 +1,6 @@
 {
   "name": "npbot13.6",
-  "version": "1.2.0",
+  "version": "1.2.3",
   "description": "Bot remoto da Noodles Picante",
   "main": "index.js",
   "scripts": {
