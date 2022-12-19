@@ -9,7 +9,7 @@ const manager = new ShardingManager('./bot.js', {
     token: process.env.DC_TOKEN,
 });
 
-manager.on('shardCreate', shard => {
+manager.on('shardCreate', async (shard) => {
     console.log(`Shard ${shard.id} lançada com sucesso!`);
 });
 
